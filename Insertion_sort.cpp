@@ -2,10 +2,10 @@
 #include <iostream>
 #include<vector>
 using namespace std;
-vector<int> insertion_sort(vector<int>& array)
+void insertion_sort(vector<long long int>& array)
 {
-    int insert_key, index2;
-    for (int index1 = 1; index1 < array.size(); index1++)
+    long long int insert_key, index2;
+    for (long long int index1 = 1; index1 < array.size(); index1++)
     {
         insert_key = array[index1]; index2 = index1;
         while (index2 > 0 && array[index2 - 1] > insert_key)
@@ -15,26 +15,26 @@ vector<int> insertion_sort(vector<int>& array)
         }
         array[index2] = insert_key;
     }
-    return array;
 }
-void display(vector<int>& array)
+void display(vector<long long int>& array)
 {
     cout << "Output is" << endl;
-    for (int i = 0; i < array.size(); i++)
+    for (long long int i = 0; i < array.size(); i++)
         cout << array[i] << " ";
+    cout << endl;
 }
 int main()
 {
     std::cout << "This is the Instertion sort algorithm implementation" << endl;
     //have to incorporate file and timer here
     int n;
-    vector<int> abc;
+    vector<long long int> abc;
     cout << "Enter the size" << endl;
     cin >> n;
     cout << "Enter the elements in an array" << endl;
-    for (int i = 0; i < n; i++)
+    for (long long int i = 0; i < n; i++)
     {
-        int x = 0;
+        long long int x = 0;
         cin >> x;
         abc.push_back(x);
     }

@@ -2,24 +2,24 @@
 #include <iostream>
 #include<vector>
 using namespace std;
-void merge(vector<int>& array, int start, int mid, int end)
+void merge(vector<long long int>& array, long long int start,long long int mid,long long int end)
 {
-    int size1 = mid - start + 1;
-    int size2 = end - mid;
-    vector<int> first_half(size1);
-    vector<int> second_half(size2);
+    long long int size1 = mid - start + 1;
+    long long int size2 = end - mid;
+    vector<long long int> first_half(size1);
+    vector<long long int> second_half(size2);
 
     //Since merge sort take extra memory
-    for (int index = 0; index < size1; index++)
+    for (long long int index = 0; index < size1; index++)
     {
         first_half[index] = array[start + index];
     }
-    for (int index = 0; index < size2; index++)
+    for (long long int index = 0; index < size2; index++)
     {
         second_half[index] = array[mid + index + 1];
     }
     //merging data to the original array
-    int index_first_Array = 0, index_second_array = 0, index_original_array = start;
+    long long int index_first_Array = 0, index_second_array = 0, index_original_array = start;
     while (index_first_Array < size1 && index_second_array < size2)
     {
         if (first_half[index_first_Array] <= second_half[index_second_array])
@@ -48,34 +48,35 @@ void merge(vector<int>& array, int start, int mid, int end)
         index_second_array++;
     }
 }
-void merge_sort(vector<int>& array,int start,int end)
+void merge_sort(vector<long long int>& array,long long int start,long long int end)
 {
     if (start >= end)
         return;
-    int mid = start + (end - start) / 2;
+    long long int mid = start + (end - start) / 2;
     merge_sort(array, start, mid);
     merge_sort(array, mid + 1, end);
     merge(array, start, mid, end);
     
 }
-void display(vector<int>& array)
+void display(vector<long long int>& array)
 {
     cout << "Output is" << endl;
     for (int i = 0; i < array.size(); i++)
         cout << array[i] << " ";
+    cout<<endl;
 }
 int main()
 {
     std::cout << "This is the Instertion sort algorithm implementation" << endl;
     //have to incorporate file and timer here
-    int n;
-    vector<int> abc;
+    long long int n;
+    vector<long long int> abc;
     cout << "Enter the size" << endl;
     cin >> n;
     cout << "Enter the elements in an array" << endl;
-    for (int i = 0; i < n; i++)
+    for (long long int i = 0; i < n; i++)
     {
-        int x = 0;
+        long long int x = 0;
         cin >> x;
         abc.push_back(x);
     }
