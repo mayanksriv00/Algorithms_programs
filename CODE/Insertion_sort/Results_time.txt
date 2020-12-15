@@ -1,0 +1,5 @@
+../sample1.txt 41
+../sample2.txt 1183
+../sample3.txt 79575
+../sample4.txt 4211799
+../sample5.txt 414968718
